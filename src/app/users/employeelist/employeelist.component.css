@@ -1,0 +1,16 @@
+.card{
+    display: inline-block;
+    margin: 0 10px 10px;
+    width: 80%;
+}
+a{
+    text-decoration: none;
+}
+/*  */
+@media only screen and (max-width: 380px) {
+ .card{
+    display: flex;
+    margin: 0 10px 10px;
+    width: 100%;
+}
+}

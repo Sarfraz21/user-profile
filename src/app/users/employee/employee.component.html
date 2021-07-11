@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <h1 class="text-center">USERS</h1>
+    <app-sort-name></app-sort-name>
+        <div class="row text-center">
+        <div class="col-md-12">
+                    <ng-container *ngFor="let user of users">
+                    <div class="card">
+                    <img src={{user.avatar}} class="card-img-top" alt="restapi">
+                    <div class="card-body">
+                        <a (click)="getUsers(user)" routerLink="['/user',user.id]"><h5 class="card-title">{{user.first_name}}</h5></a>
+                        <h5 class="card-title">{{user.last_name}}</h5>
+                    </div>
+                    </div>
+                </ng-container>    
+        </div>
+    </div>
+</div>
