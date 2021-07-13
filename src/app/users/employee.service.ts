@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  url='https://reqres.in/api/users  '
+  url='https://reqres.in/api/users';
   constructor(private http:HttpClient) { }
 
   getUsers():Observable<any>{
-  return this.http.get(this.url)
+  return  this.http.get(this.url)
   }
-
+ 
   
 }

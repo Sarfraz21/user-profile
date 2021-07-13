@@ -1,8 +1,19 @@
 <div class="container-fluid">
     <h1 class="text-center">USERS</h1>
+  
     <app-sort-name></app-sort-name>
         <div class="row text-center">
         <div class="col-md-12">
+              <circle-progress *ngIf="showSpinner"
+  [percent]="50"
+  [radius]="50"
+  [outerStrokeWidth]="8"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#78C000'"
+  [innerStrokeColor]="'#C7E596'"
+  [animation]="true"
+  [animationDuration]="20000"
+></circle-progress>
                     <ng-container *ngFor="let user of users">
                     <div class="card">
                     <img src={{user.avatar}} class="card-img-top" alt="restapi">

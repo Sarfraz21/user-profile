@@ -9,17 +9,22 @@ import { Router } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
 users:any;
+ showSpinner = true;
 // avatar;
   constructor(private employeeService:EmployeeService , private router:Router) { }
 
   ngOnInit(): void {
     this.employeeService.getUsers().subscribe((data)=>[
     //  console.log(data.data)
-     this.users = data.data
+       setTimeout(() => {
+      this.showSpinner = false
+      this.users = data.data
+       },1500)
+        
     ])
   }
   getUsers(empValue){
-  this.router.navigate(['/user',empValue.id],{queryParams:{avatar:empValue.avatar,firstname:empValue.first_name,last_name:empValue.last_name}})
+  this.router.navigate(['/user',empValue.id],{queryParams:{id:empValue.id,avatar:empValue.avatar,firstname:empValue.first_name,last_name:empValue.last_name}})
   }
 
 }
